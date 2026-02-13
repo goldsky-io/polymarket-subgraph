@@ -13,6 +13,7 @@ const config = {
     'sports-oracle-subgraph/subgraph.yaml',
     'uma-request-subgraph/subgraph.yaml',
     'wallet-subgraph/subgraph.yaml',
+    'fee-module-subgraph/subgraph.yaml',
     'common/constants.ts',
   ],
 };

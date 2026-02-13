@@ -59,6 +59,14 @@ matic:
       address: '0x2F5e3684cb1F318ec51b00Edba38d79Ac2c0aA9d'
     OptimisticOracleV2:
       address: '0xeE3Afe347D5C74317041E2618C49534dAf887c24'
+    FeeModule:
+      address: '0xE3f18aCc55091e2c48d883fc8C8413319d4Ab7b0'
+      transactionHash: '0xe9d5e02e2ba0c51c1da1088f225b53bc77fed0cd59d38e7c432eb42142618b80'
+      startBlock: 75253526
+    NegRiskFeeModule:
+      address: '0xB768891e3130F6dF18214Ac804d4DB76c2C37730'
+      transactionHash: '0x98056b5440ec9dd2eb2380ab7f7ca20e0f8e6a1afa095bf9038ec2f1fb808b04'
+      startBlock: 75253721
 mumbai:
   networkName: mumbai
   contracts:
