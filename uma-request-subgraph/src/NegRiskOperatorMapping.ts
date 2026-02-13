@@ -1,4 +1,4 @@
-import { Bytes, BigInt } from '@graphprotocol/graph-ts';
+import { BigInt } from '@graphprotocol/graph-ts';
 
 import { RequestActivityType } from './constants';
 import { boolToResultArray, createNewRequestEntity } from './helpers';
@@ -51,11 +51,13 @@ export function handleQuestionResolved(event: QuestionResolvedEvent): void {
   const requestId = negRiskQuestion.requestId.toHex();
   const request = Request.load(requestId);
 
-  if (request) {
-    request.negRiskResolved = true;
-    request.negRiskResult = boolToResultArray(event.params.result);
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.negRiskResolved = true;
+  request.negRiskResult = boolToResultArray(event.params.result);
+  request.save();
 
   const activityId =
     requestId +
@@ -84,10 +86,12 @@ export function handleQuestionFlagged(event: QuestionFlaggedEvent): void {
   const requestId = negRiskQuestion.requestId.toHex();
   const request = Request.load(requestId);
 
-  if (request) {
-    request.negRiskFlaggedAt = event.block.timestamp;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.negRiskFlaggedAt = event.block.timestamp;
+  request.save();
 
   const activityId =
     requestId +
@@ -116,10 +120,12 @@ export function handleQuestionUnflagged(event: QuestionUnflaggedEvent): void {
   const requestId = negRiskQuestion.requestId.toHex();
   const request = Request.load(requestId);
 
-  if (request) {
-    request.negRiskFlaggedAt = BigInt.fromI32(0);
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.negRiskFlaggedAt = BigInt.fromI32(0);
+  request.save();
 
   const activityId =
     requestId +
@@ -148,10 +154,12 @@ export function handleQuestionReported(event: QuestionReportedEvent): void {
   const requestId = negRiskQuestion.requestId.toHex();
   const request = Request.load(requestId);
 
-  if (request) {
-    request.negRiskResult = boolToResultArray(event.params.result);
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.negRiskResult = boolToResultArray(event.params.result);
+  request.save();
 
   const activityId =
     requestId +
@@ -182,11 +190,13 @@ export function handleQuestionEmergencyResolved(
   const requestId = negRiskQuestion.requestId.toHex();
   const request = Request.load(requestId);
 
-  if (request) {
-    request.negRiskResolved = true;
-    request.negRiskResult = boolToResultArray(event.params.result);
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.negRiskResolved = true;
+  request.negRiskResult = boolToResultArray(event.params.result);
+  request.save();
 
   const activityId =
     requestId +

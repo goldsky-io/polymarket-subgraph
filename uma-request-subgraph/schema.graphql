@@ -7,7 +7,7 @@ type Request @entity {
   adapter: Bytes!
   requestor: Bytes!
 
-  flaggedAt: BigInt
+  flaggedAt: BigInt!
   paused: Boolean!
 
   resolved: Boolean!

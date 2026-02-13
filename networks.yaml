@@ -23,6 +23,8 @@ matic:
       startBlock: 50505403
     NegRiskOperator:
       address: '0x71523d0f655B41E805Cec45b17163f528B59B820'
+      transactionHash: '0x30302f360c2b4c5df1198726754a5bc82b95f5f45cd00453991002f8fce4bf87'
+      startBlock: 50505470
     NegRiskWrappedCollateral:
       address: '0x3A3BD7bb9528E159577F7C2e685CC81A765002E2'
     UmaSportsOracle:
@@ -51,14 +53,24 @@ matic:
       startBlock: 19426226
     UmaCtfAdapterV2:
       address: '0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74'
+      transactionHash: '0x1655ff8b0aa502ee113f46d1429a8abe3d57a8775c8071475aeca71f5dca3baa'
+      startBlock: 34876144
     UmaCtfAdapterV3:
       address: '0x157Ce2d672854c848c9b79C49a8Cc6cc89176a49'
+      transactionHash: '0x9d6141163c2070673daa81c7ba775f2ac6959f9b493c584f59be7c9a895dde58'
+      startBlock: 46755254
     UmaCtfAdapterV4:
       address: '0xFf5AA608D67cba3e7483d78D36BaDD8a0AD1fC36'
+      transactionHash: '0x3c25e9a018b2fbf05d65094796dfabfae88887a1a213320553d3735a193ea098'
+      startBlock: 73819126
     NegRiskUmaCtfAdapter:
       address: '0x2F5e3684cb1F318ec51b00Edba38d79Ac2c0aA9d'
+      transactionHash: '0x3df0cbb6a0f581b8222a855386a67c5866b355ad3f013007570ab21afb034b11'
+      startBlock: 50505488
     OptimisticOracleV2:
       address: '0xeE3Afe347D5C74317041E2618C49534dAf887c24'
+      transactionHash: '0xef583e69d6ab0edb5c1a551bb5004adcd51c7236fe5d8571d0eb23c06e009484'
+      startBlock: 29786052
     FeeModule:
       address: '0xE3f18aCc55091e2c48d883fc8C8413319d4Ab7b0'
       transactionHash: '0xe9d5e02e2ba0c51c1da1088f225b53bc77fed0cd59d38e7c432eb42142618b80'
@@ -67,26 +79,3 @@ matic:
       address: '0xB768891e3130F6dF18214Ac804d4DB76c2C37730'
       transactionHash: '0x98056b5440ec9dd2eb2380ab7f7ca20e0f8e6a1afa095bf9038ec2f1fb808b04'
       startBlock: 75253721
-mumbai:
-  networkName: mumbai
-  contracts:
-    ConditionalTokens:
-      address: '0x7D8610E9567d2a6C9FBf66a5A13E9Ba8bb120d43'
-      transactionHash: '0xb3ce795972a85754f8803d6b43408fc71f472733766236072a270b04ffbb937b'
-      startBlock: 3456411
-    FixedProductMarketMakerFactory:
-      address: '0x5a80a64c8ae0551b09c3df377b60953872c5aa7f'
-      transactionHash: '0x994ccfecb4d13de47ff3775c9b63752e4c78ad8f66ea9cc272a3f623b9f10ec1'
-      startBlock: 3456423
-    Exchange:
-      address: '0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E'
-      transactionHash: '0x4cf5ff4362abb630398f45b0ed26787e7b2524c53c4cc006641764f5f8267609'
-      startBlock: 28311804
-    NegRiskExchange:
-      address: '0x87d1A0DdB4C63a6301916F02090A51a7241571e4'
-      transactionHash: '0xbbf404aab8cb23f696aa50550fe3d80e52775bdabe3948b98f2c1b90e9b41172'
-      startBlock: 43225359
-    UmaSportsOracle:
-      address: ''
-      transactionHash: ''
-      startBlock: 0

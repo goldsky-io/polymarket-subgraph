@@ -1,5 +1,3 @@
-import { BigInt, Bytes } from '@graphprotocol/graph-ts';
-
 import { RequestActivityType } from './constants';
 import { createNewRequestEntity } from './helpers';
 import { Request, RequestActivity } from './types/schema';
@@ -48,11 +46,13 @@ export function handleResolved(event: QuestionResolvedEvent): void {
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.resolved = true;
-    request.result = event.params.payouts;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.resolved = true;
+  request.result = event.params.payouts;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
@@ -69,11 +69,13 @@ export function handleFlag(event: QuestionFlaggedEvent): void {
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.flaggedAt = event.block.timestamp;
-    request.paused = true;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.flaggedAt = event.block.timestamp;
+  request.paused = true;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
@@ -90,10 +92,12 @@ export function handlePause(event: QuestionPausedEvent): void {
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.paused = true;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.paused = true;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
@@ -110,10 +114,12 @@ export function handleUnpause(event: QuestionUnpausedEvent): void {
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.paused = false;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.paused = false;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
@@ -130,10 +136,12 @@ export function handleReset(event: QuestionResetEvent): void {
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.requestTimestamp = event.block.timestamp;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.requestTimestamp = event.block.timestamp;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
@@ -152,11 +160,13 @@ export function handleEmergencyResolve(
   const id = event.params.questionID.toHex();
   let request = Request.load(id);
 
-  if (request) {
-    request.resolved = true;
-    request.result = event.params.payouts;
-    request.save();
+  if (!request) {
+    return;
   }
+
+  request.resolved = true;
+  request.result = event.params.payouts;
+  request.save();
 
   const activityId =
     id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();

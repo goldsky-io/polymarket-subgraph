@@ -7,6 +7,9 @@ import {
   DisputePrice as DisputePriceEvent,
 } from './types/OptimisticOracleV2/OptimisticOracleV2';
 
+// The OptimisticOracleV2 doesn't emit questionID directly. The UmaCtfAdapter
+// derives questionID as keccak256(ancillaryData), so we use the same derivation
+// here to match Request entities created by the adapter mappings.
 export function handleProposePrice(event: ProposePriceEvent): void {
   const id = crypto.keccak256(event.params.ancillaryData).toHex();
   const request = Request.load(id);

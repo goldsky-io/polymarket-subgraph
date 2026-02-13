@@ -9,7 +9,7 @@ dataSources:
     source:
       address: '{{ contracts.NegRiskOperator.address }}'
       abi: NegRiskOperator
-      startBlock: 63000000
+      startBlock: {{ contracts.NegRiskOperator.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -40,7 +40,7 @@ dataSources:
     source:
       address: '{{ contracts.NegRiskUmaCtfAdapter.address }}'
       abi: UmaCtfAdapterV3
-      startBlock: 63000000
+      startBlock: {{ contracts.NegRiskUmaCtfAdapter.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -73,7 +73,7 @@ dataSources:
     source:
       address: '{{ contracts.OptimisticOracleV2.address }}'
       abi: OptimisticOracleV2
-      startBlock: 63000000
+      startBlock: {{ contracts.OptimisticOracleV2.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -96,7 +96,7 @@ dataSources:
     source:
       address: '{{ contracts.UmaCtfAdapterV2.address }}'
       abi: UmaCtfAdapterV2
-      startBlock: 63000000
+      startBlock: {{ contracts.UmaCtfAdapterV2.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -129,7 +129,7 @@ dataSources:
     source:
       address: '{{ contracts.UmaCtfAdapterV3.address }}'
       abi: UmaCtfAdapterV3
-      startBlock: 63000000
+      startBlock: {{ contracts.UmaCtfAdapterV3.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -162,7 +162,7 @@ dataSources:
     source:
       address: '{{ contracts.UmaCtfAdapterV4.address }}'
       abi: UmaCtfAdapterV4
-      startBlock: 63000000
+      startBlock: {{ contracts.UmaCtfAdapterV4.startBlock }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
