@@ -1,3 +1,5 @@
+import { BigInt } from '@graphprotocol/graph-ts';
+
 import { RequestActivityType } from './constants';
 import { createNewRequestEntity } from './helpers';
 import { Request, RequestActivity } from './types/schema';
@@ -8,6 +10,7 @@ import {
   QuestionPaused as QuestionPausedEvent,
   QuestionUnpaused as QuestionUnpausedEvent,
   QuestionReset as QuestionResetEvent,
+  QuestionUnflagged as QuestionUnflaggedEvent,
   QuestionEmergencyResolved as QuestionEmergencyResolvedEvent,
 } from './types/UmaCtfAdapterV3/UmaCtfAdapterV3';
 
@@ -83,6 +86,29 @@ export function handleFlag(event: QuestionFlaggedEvent): void {
 
   activity.request = id;
   activity.type = RequestActivityType.FLAG;
+  activity.timestamp = event.block.timestamp;
+  activity.admin = event.transaction.from;
+  activity.save();
+}
+
+export function handleUnflag(event: QuestionUnflaggedEvent): void {
+  const id = event.params.questionID.toHex();
+  let request = Request.load(id);
+
+  if (!request) {
+    return;
+  }
+
+  request.flaggedAt = BigInt.fromI32(0);
+  request.paused = false;
+  request.save();
+
+  const activityId =
+    id + '-' + event.block.number.toString() + '-' + event.logIndex.toString();
+  const activity = new RequestActivity(activityId);
+
+  activity.request = id;
+  activity.type = RequestActivityType.UNFLAG;
   activity.timestamp = event.block.timestamp;
   activity.admin = event.transaction.from;
   activity.save();

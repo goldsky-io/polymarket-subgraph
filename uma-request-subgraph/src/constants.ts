@@ -13,4 +13,5 @@ export enum RequestActivityType {
   NEGRISK_FLAG,
   NEGRISK_UNFLAG,
   NEGRISK_RESOLVE_MANUALLY,
+  UNFLAG,
 }

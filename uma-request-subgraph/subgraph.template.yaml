@@ -58,6 +58,8 @@ dataSources:
           handler: handleResolved
         - event: QuestionFlagged(indexed bytes32)
           handler: handleFlag
+        - event: QuestionUnflagged(indexed bytes32)
+          handler: handleUnflag
         - event: QuestionPaused(indexed bytes32)
           handler: handlePause
         - event: QuestionUnpaused(indexed bytes32)
@@ -147,6 +149,8 @@ dataSources:
           handler: handleResolved
         - event: QuestionFlagged(indexed bytes32)
           handler: handleFlag
+        - event: QuestionUnflagged(indexed bytes32)
+          handler: handleUnflag
         - event: QuestionPaused(indexed bytes32)
           handler: handlePause
         - event: QuestionUnpaused(indexed bytes32)
@@ -180,6 +184,8 @@ dataSources:
           handler: handleResolved
         - event: QuestionFlagged(indexed bytes32)
           handler: handleFlag
+        - event: QuestionUnflagged(indexed bytes32)
+          handler: handleUnflag
         - event: QuestionPaused(indexed bytes32)
           handler: handlePause
         - event: QuestionUnpaused(indexed bytes32)
