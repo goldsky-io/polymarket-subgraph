@@ -8,7 +8,7 @@ type MarketData @entity {
 }
 
 # Exchange OrderFilled event stored directly
-type OrderFilledEvent @entity {
+type OrderFilledEvent @entity(immutable: true) {
   "Transaction hash + Order hash"
   id: ID!
   "Transaction hash"
@@ -32,7 +32,7 @@ type OrderFilledEvent @entity {
 }
 
 # Exchange OrdersMatched event stored directly
-type OrdersMatchedEvent @entity {
+type OrdersMatchedEvent @entity(immutable: true) {
   "Transaction Hash"
   id: ID!
   "Timestamp at which filled occurred"
